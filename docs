@@ -1,0 +1,31 @@
+# 1. Source ROS2 Humble
+source /opt/ros/humble/setup.bash
+
+# 2. Tell ROS you are using the Burger model
+export TURTLEBOT3_MODEL=burger
+
+# 3. Build your updated Python code
+cd ~/ros2_ws
+colcon build --packages-select maze_solver
+
+# 4. Source your workspace so ROS finds your new build
+source install/setup.bash
+
+# 5. Launch your custom maze world!
+ros2 launch maze_solver my_maze.launch.py
+
+
+
+# 1. Source ROS2 Humble
+source /opt/ros/humble/setup.bash
+
+# 2. Tell ROS you are using the Burger model again
+export TURTLEBOT3_MODEL=burger
+
+# 3. Source your workspace so ROS finds your code
+cd ~/ros2_ws
+source install/setup.bash
+
+# 4. Run the wall follower script!
+ros2 run maze_solver wall_follower
+
