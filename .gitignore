@@ -1,0 +1,29 @@
+# ROS 2 colcon build output directories
+build/
+install/
+log/
+
+# C++ / CMake build artifacts
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+*.exe
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE & Editor specific files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+.directory
+
+# Gazebo log & temporary files
+.gazebo/
+*.log
