@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="maze_world">
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://sun</uri></include>
+    <scene><shadows>false</shadows></scene>
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>0 0 10 0 1.5708 0</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <physics type="ode">
+      <real_time_update_rate>2000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>2.0</real_time_factor>
+    </physics>
+    <!-- SNAKE MAZE WALLS -->
+
+    <model name="hw_0">
+      <static>true</static>
+      <pose>-1.6000 2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_1">
+      <static>true</static>
+      <pose>-0.8000 2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_2">
+      <static>true</static>
+      <pose>0.0000 2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_3">
+      <static>true</static>
+      <pose>0.8000 2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_4">
+      <static>true</static>
+      <pose>1.6000 2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_5">
+      <static>true</static>
+      <pose>-1.6000 1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_6">
+      <static>true</static>
+      <pose>-0.8000 1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_7">
+      <static>true</static>
+      <pose>0.0000 1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_8">
+      <static>true</static>
+      <pose>0.8000 1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_9">
+      <static>true</static>
+      <pose>-0.8000 0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_10">
+      <static>true</static>
+      <pose>0.0000 0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_11">
+      <static>true</static>
+      <pose>0.8000 0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_12">
+      <static>true</static>
+      <pose>1.6000 0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_13">
+      <static>true</static>
+      <pose>-1.6000 -0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_14">
+      <static>true</static>
+      <pose>-0.8000 -0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_15">
+      <static>true</static>
+      <pose>0.0000 -0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_16">
+      <static>true</static>
+      <pose>0.8000 -0.4000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_17">
+      <static>true</static>
+      <pose>-0.8000 -1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_18">
+      <static>true</static>
+      <pose>0.0000 -1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_19">
+      <static>true</static>
+      <pose>0.8000 -1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_20">
+      <static>true</static>
+      <pose>1.6000 -1.2000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_21">
+      <static>true</static>
+      <pose>-1.6000 -2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_22">
+      <static>true</static>
+      <pose>-0.8000 -2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_23">
+      <static>true</static>
+      <pose>0.0000 -2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="hw_24">
+      <static>true</static>
+      <pose>0.8000 -2.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.9200 0.1200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_25">
+      <static>true</static>
+      <pose>-2.0000 1.6000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_26">
+      <static>true</static>
+      <pose>2.0000 1.6000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_27">
+      <static>true</static>
+      <pose>-2.0000 0.8000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_28">
+      <static>true</static>
+      <pose>2.0000 0.8000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_29">
+      <static>true</static>
+      <pose>-2.0000 0.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_30">
+      <static>true</static>
+      <pose>2.0000 0.0000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_31">
+      <static>true</static>
+      <pose>-2.0000 -0.8000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_32">
+      <static>true</static>
+      <pose>2.0000 -0.8000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_33">
+      <static>true</static>
+      <pose>-2.0000 -1.6000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="vw_34">
+      <static>true</static>
+      <pose>2.0000 -1.6000 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.1200 0.9200 0.5</size></box></geometry>
+          <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+  </world>
+</sdf>
